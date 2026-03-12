@@ -1,4 +1,4 @@
-package algods.lecture.vl_2026_03_10.Lists;
+package algods.lecture.vl_2026_03_12.Lists;
 
 public class Element {
     int data;
@@ -26,8 +26,8 @@ public class Element {
         // return this;
     }
 
-    /// Hängt ein Element ans Ende der Liste an.
-    public void add(int d) {
+    /// Fügt ein neues Element mit dem gegeben Wert vor this ein.
+    public void insertBefore(int d) {
         Element e = new Element();
         e.data = d;
 
@@ -38,13 +38,19 @@ public class Element {
         e.prev = last;
     }
 
+    /// Entfernt das Element vor this aus der Liste.
+    public void removeBefore() {
+        if (this.prev == this) {
+            return;
+        }
+
+        Element e = this.prev.prev;
+        e.next = this;
+        this.prev = e;
+    }
+
     /// Liefert die Länge der Liste.
     public int size() {
-<<<<<<< HEAD
-        // TODO
-        
-        return 0;
-=======
         int counter = 0;
         Element current = this;
 
@@ -54,6 +60,5 @@ public class Element {
         }
 
         return counter;
->>>>>>> 318e4bc182b5e7c79f44e94473d76145e9b9848f
     }
 }
