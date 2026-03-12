@@ -1,4 +1,4 @@
-package algods.lecture.vl_2026_03_10.Lists;
+package algods.myProgramm.vl_2026_03_10.Lists;
 
 public class Element {
     int data;
@@ -42,7 +42,13 @@ public class Element {
     /// Liefert die Länge der Liste.
     public int size() {
         // TODO
-        
-        return 0;
+        int count = 0;
+        Element current = this.next;    
+
+        while (current != this) {
+            count++;
+            current = current.next;
+        }
+        return count;
     }
 }
