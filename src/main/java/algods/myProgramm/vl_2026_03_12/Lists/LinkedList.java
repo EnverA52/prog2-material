@@ -47,7 +47,7 @@ public class LinkedList {
         current.removeBefore();
         this.size--;
     }
-
+ 
     public int size() {
         return this.size;
     }
