@@ -49,6 +49,7 @@ public class Node {
                 return this.right.get(key);
             }
             
+
     }
 
     /// Liefert die Höhe des Baumes ab `this`.
@@ -56,7 +57,8 @@ public class Node {
         // TODO
         int leftHeight = this.left.height();
         int rightHeight = this.right.height();
-        return Math.max(leftHeight, rightHeight) + 1;
+        int maxHeight = Math.max(leftHeight, rightHeight);
+        return maxHeight + 1;
     }
 
     public void printTree() {
